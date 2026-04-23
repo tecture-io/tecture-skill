@@ -1,21 +1,34 @@
-# tecture — Claude Code skill
+# tecture — cross-agent architecture skill
 
 Author and maintain a file-based architecture at `./architecture/` — `manifest.json`, one JSON file per diagram, and one markdown description per node. Includes JSON schemas and a self-contained Node validator.
 
+Works across any agent that supports the open SKILL.md standard — Claude Code, GitHub Copilot (VS Code/CLI/cloud), Cursor, Cline, Windsurf, Codex CLI, and others.
+
 ## Install
 
+Clone into your coding agent's skill directory:
+
+| Agent                          | Install path                         |
+| ------------------------------ | ------------------------------------ |
+| Claude Code                    | `~/.claude/skills/tecture`           |
+| GitHub Copilot (VS Code / CLI) | `~/.copilot/skills/tecture`          |
+| Cursor                         | `~/.cursor/skills/tecture`           |
+| Cline, Windsurf, Codex, others | `~/.agents/skills/tecture` (neutral) |
+
 ```bash
-git clone https://github.com/tecture-io/tecture-skill.git ~/.claude/skills/tecture
+git clone https://github.com/tecture-io/tecture-skill.git <chosen-path>
 ```
 
-Restart Claude Code. The skill activates when you ask Claude to create, update, split, or document an architecture as local JSON/Markdown files.
+For a team-wide install, clone under the repo's project-scoped equivalent instead (e.g. `.claude/skills/tecture`, `.github/skills/tecture`, `.agents/skills/tecture`) and commit.
+
+Restart the agent. The skill activates when you ask it to create, update, split, or document an architecture as local JSON/Markdown files.
 
 ## Run the validator
 
-From your project root (where `./architecture/` lives):
+From your project root (where `./architecture/` lives), replace `<install-path>` with whichever of the paths above you chose:
 
 ```bash
-node ~/.claude/skills/tecture/scripts/validate.mjs
+node <install-path>/scripts/validate.mjs
 ```
 
 Exit codes: `0` success, `1` validation failure, `2` internal error. Pass a path to validate somewhere other than `./architecture`.

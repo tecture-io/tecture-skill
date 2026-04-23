@@ -189,13 +189,13 @@ Write the complete file each time — do not try to patch JSON by hand with part
 
 ## Validation (always run before reporting done)
 
-Run the bundled validator from the project root:
+Run the bundled validator from the project root. Replace `<SKILL_DIR>` with wherever this skill is installed — commonly `.claude/skills/tecture`, `.github/skills/tecture`, `.cursor/skills/tecture`, or `.agents/skills/tecture`:
 
 ```
-node .claude/skills/tecture/scripts/validate.mjs
+node <SKILL_DIR>/scripts/validate.mjs
 ```
 
-By default it checks `./architecture`. Pass a path to validate a different location: `node .claude/skills/tecture/scripts/validate.mjs path/to/other-arch`.
+By default it checks `./architecture`. Pass a path to validate a different location: `node <SKILL_DIR>/scripts/validate.mjs path/to/other-arch`.
 
 The validator checks:
 
