@@ -6,6 +6,24 @@ Works across any agent that supports the open SKILL.md standard — Claude Code,
 
 ## Install
 
+### One-liner (recommended)
+
+Using the [skills.sh](https://skills.sh) CLI — installs into any agent you target:
+
+```bash
+npx skills add tecture-io/tecture-skill
+```
+
+Or with [GitHub CLI](https://cli.github.com) (≥ 2.90.0):
+
+```bash
+gh skill install tecture-io/tecture-skill
+```
+
+Both auto-detect your installed agents and wire the skill into the right directory.
+
+### Manual install
+
 Clone into your coding agent's skill directory:
 
 | Agent                          | Install path                         |

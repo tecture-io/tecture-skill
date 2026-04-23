@@ -1,6 +1,13 @@
 ---
 name: tecture
-description: Author or update a file-based C4 architecture under ./architecture (manifest.json + one JSON file per C4 level + one markdown description per node) by first discovering the repo's tech stack, deployables, and external dependencies, then mapping them onto C4 diagrams. Use when the user asks to document, draw, create, update, or split the architecture of a codebase as local JSON/Markdown files (not via the Tecture MCP server). Always ends by running the bundled validator.
+description: >
+  Author and maintain file-based architecture diagrams under `./architecture` (manifest.json + one
+  JSON file per diagram + one markdown description per node), grounded in the repo's actual tech
+  stack, deployables, and external dependencies. Use when the user says "document the architecture",
+  "draw the architecture", "create architecture diagrams", "update the architecture", or "split the
+  architecture into multiple diagrams". Do NOT use for editing an architecture through the Tecture
+  MCP server (use that directly), one-off inline mermaid diagrams in a single markdown file, or
+  non-structural documentation like deployment runbooks or API specs.
 ---
 
 Maintain a file-based C4 architecture at `./architecture/` (relative to the project root). The on-disk layout mirrors the Tecture data model but replaces UUIDs with slugs and moves long-form node descriptions into standalone markdown files.
